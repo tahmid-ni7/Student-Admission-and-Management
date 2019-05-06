@@ -1,4 +1,4 @@
-# Simple application for student admission and management
+# Simple application for student admission and management by Codeigniter
 This is a simple application for student admission system made by **CodeIgniter**. This application has one user that is only admin, admin will do all the tasks in this application. This app is build for practise basic codeigniter funtionalities and templeting process with codeigniter.
 
 *This project has only two main layouts, These are home layout and user layout. Other pages are under these layouts.*
@@ -22,8 +22,11 @@ This project is developed by,
 
 *Fell free to frok and cotributing in this project. For more query related to this project, contact me through email.*
 
+**I migrated this project into Codeigniter framework, from my this simple (https://github.com/tahmid-ni7/Student-Admission) raw php project.**
+
 #### For Login:
 Email: admin@gmail.com
+
 password: 12345
 
 Thanks & Regards
