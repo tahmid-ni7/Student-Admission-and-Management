@@ -22,12 +22,12 @@ This project is developed by,
 
 *Fell free to frok and cotributing in this project. For more query related to this project, contact me through email.*
 
-**I migrated this project into Codeigniter framework, from my this simple (https://github.com/tahmid-ni7/Student-Admission) raw php project.**
+**I migrated this simple (https://github.com/tahmid-ni7/Student-Admission) raw PHP project, into MVC Codeigniter framework project here.**
 
-#### For Login:
-Email: admin@gmail.com
+## See live project demo at server
+Click the link to see this project- https://tnone.000webhostapp.com/ci-student
 
-password: 12345
+**For Login** -> *Email: admin@gmail.com & password: 12345*
 
 Thanks & Regards
 

@@ -111,7 +111,7 @@ section.section-padding {
     display: block;
     padding: 5px 14px;
     color: #dddd;
-    text-transform: uppercase;
+    text-transform: capitalize;
     text-align: center;
     font-weight: 700;
     transition: .4s;
