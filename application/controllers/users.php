@@ -44,14 +44,32 @@ class Users extends CI_Controller {
 		$this->form_validation->set_rules('shift', 'Shift', 'trim|required|strip_tags[shift]');
 		$this->form_validation->set_rules('gender', 'gender', 'trim|required|strip_tags[gender]');
 
-		if(($this->form_validation->run() && $this->upload->do_upload()) == FALSE)
+		if (empty($_FILES['userfile']['name'])) 
 		{
-			$view['user_view'] = "admin/admission";
+		 	$this->form_validation->set_rules('userfile', 'Profile picture', 'required|strip_tags[userfile]'); 
+		}
+
+		$view = array();
+		if($this->form_validation->run() == TRUE)
+		{
+		    if(!$this->upload->do_upload('userfile'))
+		    {
+		        $view['upload_errors'] = $this->upload->display_errors();
+		    }
+		}
+		else
+		{
+		    $view['form_error'] = validation_errors();
+		}
+
+		if(array_key_exists('upload_errors', $view) || array_key_exists('form_error', $view))
+		{
+		    $view['user_view'] = "admin/admission";
 			$this->load->view('layouts/user_layout', $view);
 		}
 		else
 		{
-			$this->load->model('user_model');
+		    $this->load->model('user_model');
 
 			if($this->user_model->add_student())
 			{
@@ -62,7 +80,6 @@ class Users extends CI_Controller {
 			{
 				print $this->db->error();
 			}
-
 		}
 
 	}
@@ -119,10 +136,29 @@ class Users extends CI_Controller {
 		$this->form_validation->set_rules('b_group', 'Blood Group', 'trim|required|strip_tags[b_group]');
 		$this->form_validation->set_rules('shift', 'Shift', 'trim|required|strip_tags[shift]');
 		$this->form_validation->set_rules('gender', 'gender', 'trim|required|strip_tags[gender]');
-
-		if(($this->form_validation->run() && $this->upload->do_upload()) == FALSE)
+		if (empty($_FILES['userfile']['name'])) 
 		{
-			if($this->user_model->get_student_details($id))
+		 	$this->form_validation->set_rules('userfile', 'Profile picture', 'required|strip_tags[userfile]'); 
+		}
+
+
+		$view = array();
+		if($this->form_validation->run() == TRUE)
+		{
+		    if(!$this->upload->do_upload('userfile'))
+		    {
+		        $view['upload_errors'] = $this->upload->display_errors();
+		    }
+		}
+		else
+		{
+		    $view['form_error'] = validation_errors();
+		}
+
+		if(array_key_exists('upload_errors', $view) || array_key_exists('form_error', $view))
+		{
+			$view['student_details'] = $this->user_model->get_student_details($id);
+		    if($this->user_model->get_student_details($id))
 			{
 				$view['user_view'] = "admin/student_edit";
 				$this->load->view('layouts/user_layout', $view);
@@ -132,12 +168,11 @@ class Users extends CI_Controller {
 				$view['user_view'] = "admin/404_page";
 				$this->load->view('layouts/user_layout', $view);
 			}
-			
 		}
 		else
 		{
-			$this->load->model('user_model');
-
+		    $this->load->model('user_model');
+		    $data = "";
 			if($this->user_model->edit_student($id, $data))
 			{
 				$this->session->set_flashdata('success', 'Student\'s info updated successfully');
@@ -147,7 +182,6 @@ class Users extends CI_Controller {
 			{
 				print $this->db->error();
 			}
-
 		}
 	}
 

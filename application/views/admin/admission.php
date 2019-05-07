@@ -89,6 +89,18 @@
 			<label>Profile Image</label>
 			<?= form_upload(['name'=>'userfile', 'class'=>'form-control', 'value' => ''])?>
              <div class="text-secondary">* Upload PNG, JPG format. Image should not be more than 400KB</div>
+            <div class="text-danger">
+	            <?php 
+		            if (isset($upload_errors))
+		            {
+		            	print $upload_errors;
+		            }
+		            else
+		            {
+		            	print form_error('userfile');
+		            }  
+	            ?>	
+            </div>
 		</div>
 		
 		<div class="form-group">
