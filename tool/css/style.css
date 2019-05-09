@@ -347,3 +347,45 @@ td img {
     text-align: center;
     font-size: 18px;
 }
+
+/* === Student slider === */
+.single-slider {
+    text-align: center;
+    padding: 10px;
+}
+.single-slider:hover {
+    background: #fbfbfb;
+}
+
+.slide-image img {
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+.owl-carousel .owl-item img {
+    height: 120px;
+    width: 120px;
+    text-align: center;
+    display: inline-block;
+}
+.owl-nav {
+    position: relative;
+    bottom: 150px;
+}
+
+.owl-nav div {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 300;
+    color: #3333;
+    padding: 0 5px;
+}
+.owl-nav div:hover
+{
+    color: #563D7C;
+}
+
+.owl-next {
+    position: absolute;
+    right: 0;
+}

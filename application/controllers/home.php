@@ -12,7 +12,8 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('layouts/home_layout');
+		$view['students_slider'] = $this->user_model->students_slider();
+		$this->load->view('layouts/home_layout', $view);
 	}
 
 	public function login()

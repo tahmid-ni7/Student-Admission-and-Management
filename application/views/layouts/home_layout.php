@@ -46,32 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     
     <!--=== Services ===-->
-    <div class="container">
-        <div class="section-title">Our services</div>
-        <div class="row">
-            <div class="col-lg-4">
-                <a href="#" class="single-services">
-                   <i class="fas fa-school"></i>
-                    <h4>Most Qualified Teachers</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate maiores dolores, rem. Adipisci dolor molestiae obcaecati ratione dolores officia illum!</p>
-                </a>
-            </div>
-            <div class="col-lg-4">
-                <a href="#" class="single-services">
-                    <i class="fas fa-tractor"></i>
-                    <h4>Extra care for week students</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate maiores dolores, rem. Adipisci dolor molestiae obcaecati ratione dolores officia illum!</p>
-                </a>
-            </div>
-            <div class="col-lg-4">
-                <a href="#" class="single-services">
-                    <i class="fas fa-medal"></i>
-                    <h4>Regular Model test</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate maiores dolores, rem. Adipisci dolor molestiae obcaecati ratione dolores officia illum!</p>
-                </a>
-            </div>
-        </div>
-    </div>
+    <?php $this->load->view('temp/services') ?>
 
     <!--=== Students ===-->
     <div class="container">
@@ -83,6 +58,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             print "We have total ".$total_students." regular students"; 
             ?>
         </p>
+        
+        <div class="row">
+            <div class="owl-carousel student-slider">
+                <?php foreach ($students_slider as $student): ?>
+                    <div class="col-lg-12">
+                        <div class="single-slider">
+                            <div class="slide-image"><?php print '<img src="'.strip_tags($student->profile_image).'" width="120" height = "120">'; ?></div>
+                            <p><a href="#" class="text-info"><?= $student->s_name ?></a></p>
+                            <p><?= $student->email ?></p>
+                            <p><?=$student->address ?></p>
+                        </div>
+                    </div>
+               <?php endforeach; ?>
+            </div>
+        </div>
     </div>
 
     <!--=== Footer ===-->

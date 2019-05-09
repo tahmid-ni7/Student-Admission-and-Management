@@ -11,6 +11,15 @@
 			autoplay: false
 		});
 
+		$('.student-slider').owlCarousel({
+			items: 3,
+			nav: true,
+			dots: false,
+			loop: true,
+			autoplay: true,
+			navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"]
+		});
+
 		/*=== Confirmation of delete ===*/
 		$('.delete').on("click", function (e) {
 		    e.preventDefault();

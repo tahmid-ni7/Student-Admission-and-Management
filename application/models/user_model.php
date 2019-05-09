@@ -90,4 +90,11 @@ class User_model extends CI_Model
 		return $insert_data;
 
 	}
+
+	public function students_slider()
+	{
+		$this->db->order_by('id', 'DESC');
+		$query = $this->db->get('students');
+		return $query->result();
+	}
 }
