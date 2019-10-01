@@ -24,8 +24,6 @@ This project is developed by,
 
 **I migrated this simple (https://github.com/tahmid-ni7/Student-Admission) raw PHP project, into MVC Codeigniter framework project here.**
 
-## See live project demo at server
-Click the link to see this project- https://tnone.000webhostapp.com/ci-student
 
 **For Login** -> *Email: admin@gmail.com & password: 12345*
 
